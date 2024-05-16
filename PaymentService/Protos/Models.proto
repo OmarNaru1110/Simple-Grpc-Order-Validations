@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option csharp_namespace = "PaymentService.Protos";
+
+
+message PaymentDetails{
+	int32 userId = 1;
+	DecimalValue totalPrice = 2;
+}
+
+// Example: 12345.6789 -> { units = 12345, nanos = 678900000 }
+message DecimalValue {
+
+  // Whole units part of the amount
+  int64 units = 1;
+
+  // Nano units of the amount (10^-9)
+  // Must be same sign as units
+  sfixed32 nanos = 2;
+}
+
+message Status{
+	bool success = 1;
+}

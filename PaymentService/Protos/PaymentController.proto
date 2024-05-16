@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option csharp_namespace = "PaymentService.Protos";
+
+import "Protos/Models.proto";
+
+service PaymentController{
+	rpc CheckValidPayment(PaymentDetails) returns (Status);
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option csharp_namespace = "InventoryService.Protos";
+
+message ProductMsg{
+	int32 ProductId = 1;
+	int32 quantity = 2;
+}
+
+message Products {
+	repeated ProductMsg products=1;
+}
+message Status{
+	bool success = 1;
+}

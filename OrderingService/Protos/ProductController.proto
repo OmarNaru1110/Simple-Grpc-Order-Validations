@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option csharp_namespace = "OrderingService.protos";
+
+import "Protos/Models.proto";
+
+service ProductController{
+	rpc CheckValidItems(Products) returns (Status);
+}

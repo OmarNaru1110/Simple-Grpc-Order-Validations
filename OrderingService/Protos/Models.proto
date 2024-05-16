@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option csharp_namespace = "OrderingService.Protos";
+
+message ProductMsg{
+	int32 ProductId = 1;
+	int32 quantity = 2;
+}
+
+message Products {
+	repeated ProductMsg products=1;
+}
+
+message PaymentDetails{
+	int32 userId = 1;
+	DecimalValue totalPrice = 2;
+}
+
+// Example: 12345.6789 -> { units = 12345, nanos = 678900000 }
+message DecimalValue {
+
+  // Whole units part of the amount
+  int64 units = 1;
+
+  // Nano units of the amount (10^-9)
+  // Must be same sign as units
+  sfixed32 nanos = 2;
+}
+
+message Status{
+	bool success = 1;
+}
